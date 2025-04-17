@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="theme-color" content="#0f172a">
+    <title>Lunara JSON Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="upload-container">
+            <button id="toggleUploadBtn">Upload</button>
+            <button id="refreshBtn">Refresh</button>
+            <a href="https://keolotso.github.io/Lunara-JSON-Generator/" class="button" target="_blank">Make Own JSON's</a>
+        </div>
+        <div class="upload-debug" id="uploadDebug"></div>
+    </div>
+
+    <h1 class="title">Lunara JSON store</h1>
+
+    <div id="uploadForm" class="form-modal" style="display: none;">
+        <div class="form-content">
+            <h2>Upload your JSON</h2>
+            <label>Title:<br><input type="text" id="titleInput"></label><br>
+            <label>Author:<br><input type="text" id="authorInput"></label><br>
+            <label>Select JSON File:<br><input type="file" id="jsonUpload" accept="application/json"></label><br>
+            <button id="submitUpload">Submit</button>
+        </div>
+    </div>
+
+    <div id="jsonDisplay" class="json-display"></div>
+
+    <script>
+        const SUPABASE_URL = "https://apqeitnavsjwqrpruuqq.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwcWVpdG5hdnNqd3FycHJ1dXFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxMDUzMzYsImV4cCI6MjA1OTY4MTMzNn0.G14iwTdC2qpCsRTw3-JcKTowx4yRWJPpObGGWIr65lQ";
+        const BUCKET_NAME = "lunara-json-storage";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
